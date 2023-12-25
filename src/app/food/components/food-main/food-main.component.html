@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row my-3">
+    <div class="col-12 col-md-6">
+      <app-details></app-details>
+    </div>
+    <div class="col-12 col-md-6">
+      <app-master (foodInfoListChange)="onFoodInfoListChange($event)"></app-master>
+    </div>
+  </div>
+  <div class="col-12">
+    <app-json-print [jsonStr]="foodInfoList | json"></app-json-print>
+  </div>
+</div>
+

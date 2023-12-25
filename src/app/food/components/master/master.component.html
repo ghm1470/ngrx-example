@@ -1,0 +1,14 @@
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">Item List total{{ total }}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Your selected items are:</h6>
+        <ul class="list-group" *ngIf="foodInfoList">
+            <ng-container *ngFor="let foodInfo of foodInfoList.slice();let i=index">
+                <li class="list-group-item">{{ foodInfo.food }} - {{ foodInfo.country }} ---
+                    <button (click)="delete(i)">delete-- {{ i }}</button>
+                    <button (click)="select(i)">select-- {{ i }}</button>
+                </li>
+            </ng-container>
+        </ul>
+    </div>
+</div>

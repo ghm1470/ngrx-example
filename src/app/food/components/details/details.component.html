@@ -1,0 +1,27 @@
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Add new</h5>
+    <h6 class="card-subtitle mb-2 text-muted">Add new food and confirm</h6>
+    <form #detailsForm="ngForm" (submit)="onSubmit()">
+      <div class="p-2">
+        <div class="mb-3 row">
+          <label for="food" class="col-sm-3 col-form-label">Food</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control" id="food" name="food" [(ngModel)]="foodInfo.food">
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label for="country" class="col-sm-3 col-form-label">Country</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control" id="country" name="country" [(ngModel)]="foodInfo.country">
+          </div>
+        </div>
+        <div class="mb-3 row justify-content-end">
+            <button type="button" class="btn btn-light mx-3" (click)="addFoods()">addFoods</button>
+            <button type="button" class="btn btn-light mx-3" (click)="onCancel(detailsForm)">Cancel</button>
+            <button type="submit" class="btn btn-primary mx-3">{{ selectedIndex===-1?'Save':'Update '}}</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
